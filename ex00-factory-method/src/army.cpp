@@ -29,7 +29,28 @@ void army_c::MoveToPosition(std::uint32_t xCoord, std::uint32_t yCoord) noexcept
 void army_c::Formation(combatFormation_t formation) noexcept
 {
 	std::ostringstream oss;
-	oss << "we formation to " << formationToString(formation);
+	oss << m_strName << ": we formation to " << formationToString(formation);
+	TRACE(oss);
+}
+
+void army_c::Attack() noexcept
+{
+	std::ostringstream oss;
+	oss << m_strName << ": we attack!";
+	TRACE(oss);
+}
+
+void army_c::Defend() noexcept
+{
+	std::ostringstream oss;
+	oss << m_strName << ": we defend!";
+	TRACE(oss);
+}
+
+void army_c::BackOff() noexcept
+{
+	std::ostringstream oss;
+	oss << m_strName << ": we back off!";
 	TRACE(oss);
 }
 
