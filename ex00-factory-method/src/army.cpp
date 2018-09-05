@@ -19,6 +19,13 @@ army_c::army_c(const std::string &name, std::uint32_t count, force_t type) noexc
 	// ... nothing interest here
 }
 
+army_c::~army_c()
+{
+	std::ostringstream oss;
+	oss << m_strName << ": dismissed!";
+	TRACE(oss);
+}
+
 void army_c::MoveToPosition(std::uint32_t xCoord, std::uint32_t yCoord) noexcept
 {
 	std::ostringstream oss;

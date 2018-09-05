@@ -24,7 +24,7 @@ public:
 
 	army_c() noexcept : m_strName("fake_squad"), m_nAmount(0), m_forceType(force_t::INFANTRY_FORCE) {};
 	army_c(const std::string &name, std::uint32_t count, force_t type) noexcept;
-	virtual ~army_c(){}
+	virtual ~army_c();
 
 	void MoveToPosition(std::uint32_t xCoord, std::uint32_t yCoord) noexcept;
 	void Formation(combatFormation_t formation) noexcept;

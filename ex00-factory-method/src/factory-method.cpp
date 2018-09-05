@@ -7,9 +7,15 @@
 //============================================================================
 
 #include <iostream>
-#include "army.hpp"
+#include "romeCommander.hpp"
+#include "greekCommander.hpp"
 
 int main() {
-	std::cout << "!!!Hello World!!!" << std::endl; // prints !!!Hello World!!!
+	romeCommander_c cesar;
+	cesar.CaptureStrategy(army_c::force_t::CAVALRY_FORCE);
+
+	greekCommander_c odessey;
+	odessey.PatrolStrategy(army_c::force_t::INFANTRY_FORCE);
+
 	return 0;
 }
