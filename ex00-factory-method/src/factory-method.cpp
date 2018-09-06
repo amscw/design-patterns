@@ -22,11 +22,7 @@
  */
 
 int main() {
-	romeCommander_c cesar;
-	cesar.CaptureStrategy(commander_c::force_t::CAVALRY_FORCE);
-
-	greekCommander_c odessey;
-	odessey.PatrolStrategy(commander_c::force_t::INFANTRY_FORCE);
-
+	romeCommander_c().CaptureStrategy(commander_c::force_t::CAVALRY_FORCE);
+	greekCommander_c().PatrolStrategy(commander_c::force_t::INFANTRY_FORCE);
 	return 0;
 }
