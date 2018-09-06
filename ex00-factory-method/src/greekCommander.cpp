@@ -6,23 +6,24 @@
  */
 
 #include "greekCommander.hpp"
+#include "greekArmy.hpp"
 
-army_c *greekCommander_c::createArmy(army_c::force_t forceType) noexcept
+army_c *greekCommander_c::createArmy(force_t forceType) noexcept
 {
 	std::unique_ptr<army_c> army;
 
 	switch (forceType)
 	{
-	case army_c::force_t::ARCHER_FORCE:
-		army = std::make_unique<army_c>("Odessey", 55, forceType);
+	case force_t::ARCHER_FORCE:
+		army = std::make_unique<greekArcherArmy_c>("Odessey", 55);
 		army->Formation(army_c::combatFormation_t::ROW);
 		break;
-	case army_c::force_t::CAVALRY_FORCE:
-		army = std::make_unique<army_c>("Odessey", 10, forceType);
+	case force_t::CAVALRY_FORCE:
+		army = std::make_unique<greekCavalryArmy_c>("Odessey", 10);
 		army->Formation(army_c::combatFormation_t::WEDGE);
 		break;
-	case army_c::force_t::INFANTRY_FORCE:
-		army = std::make_unique<army_c>("Odessey", 85, forceType);
+	case force_t::INFANTRY_FORCE:
+		army = std::make_unique<greekInfantryArmy_c>("Odessey", 85);
 		army->Formation(army_c::combatFormation_t::PIG);
 		break;
 	}

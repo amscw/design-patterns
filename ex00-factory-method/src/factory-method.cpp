@@ -10,12 +10,23 @@
 #include "romeCommander.hpp"
 #include "greekCommander.hpp"
 
+/**
+ * Паттерн "фабричный метод" предназначен для инкапсуляции стратегии использования абстрактных объектов
+ * в классах-создателях (Creator), которые делегируют процесс создания продуктов (Product) своим наследникам.
+ *
+ * Суть паттерна - неизменная стратегия использования объекта.
+ *
+ * Реализация паттерна подразумевает наличие параллельных иерархий:
+ * Creator <- ConcreteCreator
+ * Product <- ConcreteProduct
+ */
+
 int main() {
 	romeCommander_c cesar;
-	cesar.CaptureStrategy(army_c::force_t::CAVALRY_FORCE);
+	cesar.CaptureStrategy(commander_c::force_t::CAVALRY_FORCE);
 
 	greekCommander_c odessey;
-	odessey.PatrolStrategy(army_c::force_t::INFANTRY_FORCE);
+	odessey.PatrolStrategy(commander_c::force_t::INFANTRY_FORCE);
 
 	return 0;
 }

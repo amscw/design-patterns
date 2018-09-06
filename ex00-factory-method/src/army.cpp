@@ -9,12 +9,12 @@
 #include "army.hpp"
 
 
-army_c::army_c(const std::string &name, std::uint32_t count, force_t type) noexcept :
-	m_strName(name), m_nAmount(count), m_forceType(type)
+army_c::army_c(const std::string &name, std::uint32_t count) noexcept :
+	m_strName(name), m_nAmount(count)
 {
 	// common create actions
 	std::ostringstream oss;
-	oss << "creating " << m_nAmount << " " << forceTypeToString(m_forceType) << " warriors \"" << m_strName << "\"...";
+	oss << "creating " << m_nAmount << " " << " warriors \"" << m_strName << "\"...";
 	TRACE(oss);
 	// ... nothing interest here
 }
@@ -22,7 +22,7 @@ army_c::army_c(const std::string &name, std::uint32_t count, force_t type) noexc
 army_c::~army_c()
 {
 	std::ostringstream oss;
-	oss << m_strName << ": dismissed!";
+	oss << m_strName << ": we are dismissed!";
 	TRACE(oss);
 }
 
@@ -53,11 +53,3 @@ void army_c::Defend() noexcept
 	oss << m_strName << ": we defend!";
 	TRACE(oss);
 }
-
-void army_c::BackOff() noexcept
-{
-	std::ostringstream oss;
-	oss << m_strName << ": we back off!";
-	TRACE(oss);
-}
-

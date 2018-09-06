@@ -12,8 +12,7 @@
 
 class romeCommander_c : public commander_c
 {
-protected:
-	virtual army_c *createArmy(army_c::force_t forceType) noexcept;
+	virtual army_c *createArmy(force_t forceType) noexcept;
 };
 
 

@@ -6,23 +6,25 @@
  */
 
 #include "romeCommander.hpp"
+#include "romeArmy.hpp"
 
-army_c *romeCommander_c::createArmy(army_c::force_t forceType) noexcept
+
+army_c *romeCommander_c::createArmy(force_t forceType) noexcept
 {
 	std::unique_ptr<army_c> army;
 
 	switch (forceType)
 	{
-	case army_c::force_t::ARCHER_FORCE:
-		army = std::make_unique<army_c>("Antivirus", 50, forceType);
+	case force_t::ARCHER_FORCE:
+		army = std::make_unique<romeArcherArmy_c>("Antivirus", 50);
 		army->Formation(army_c::combatFormation_t::ROW);
 		break;
-	case army_c::force_t::CAVALRY_FORCE:
-		army = std::make_unique<army_c>("Antivirus", 15, forceType);
+	case force_t::CAVALRY_FORCE:
+		army = std::make_unique<romeCavalryArmy_c>("Antivirus", 15);
 		army->Formation(army_c::combatFormation_t::WEDGE);
 		break;
-	case army_c::force_t::INFANTRY_FORCE:
-		army = std::make_unique<army_c>("Antivirus", 70, forceType);
+	case force_t::INFANTRY_FORCE:
+		army = std::make_unique<romeInfantryArmy_c>("Antivirus", 70);
 		army->Formation(army_c::combatFormation_t::PIG);
 		break;
 	}
